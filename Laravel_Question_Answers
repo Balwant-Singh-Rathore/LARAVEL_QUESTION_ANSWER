@@ -1,0 +1,479 @@
+#Q.1 Is PHP synchronous or asynchronous?
+*ANS* -> PHP serves requests synchronously. It means that each line of code executes in the synchronous manner of the script. 
+         After getting the result from one line it executes next line or wait for the result before jumping to the execution of
+         the next line of code.
+         
+____________________________________________________________________________________________________________________________________
+
+#Q.2 Is PHP multi-threaded or single-threaded?
+*ANS* -> PHP is NOT single threaded by nature. It is, however, the case that the most common installation of PHP on unix systems
+          is a single threaded setup, as is the most common Apache installation, and nginx doesn't have a thread based architecture
+          whatever.
+          
+____________________________________________________________________________________________________________________________________
+
+#Q.3 What Is trait in PHP?
+*ANS* -> Traits are a mechanism for code reuse in single inheritance languages such as PHP. A Trait is intended to reduce some
+         limitations of single inheritance by enabling a developer to reuse sets of methods freely in several independent classes
+         living in different class hierarchies.
+         
+____________________________________________________________________________________________________________________________________
+
+#Q.4 What Is Facad In Laravel?
+*ANS* -> Laravel facades serve as "static proxies" to underlying classes in the service container, providing the benefit of a terse,
+         expressive syntax while maintaining more testability and flexibility than traditional static methods.
+         
+____________________________________________________________________________________________________________________________________
+
+#Q.5 What Is Facad In PHP?
+*ANS* -> Facade is a structural design pattern that provides a simplified (but limited) interface to a complex system of classes, 
+         library or framework. While Facade decreases the overall complexity of the application, it also helps to move unwanted 
+         dependencies to one place.
+ ____________________________________________________________________________________________________________________________________        
+         
+#Q.6 Full Form of REST Api?
+*ANS* -> Full form of REST API is Representational State Transfer Application Programming.
+
+_________________________________________________________________________________________________________________________________
+
+#Q.7 Diffrance between  api and REST api?
+*ANS* -> 
+1) API vs REST API: Structure
+   While structurally, most of the APIs follow the application-application format, REST API strictly operates 
+   on the web concept of Client and Server. The Client and Server are separated from one another, giving more flexibility.
+
+2) API vs REST API: Design
+   Generally, APIs are lightweight architectures that are designed for gadgets constrained to devices like smartphones.
+   In contrast, REST APIs communicate over systems, making it a complex architecture.
+
+3) API vs REST API: Protocol
+   The primary goal of API is to standardize data exchange between web services. Depending on the type of API, 
+   the choice of protocol changes. On the other hand, REST API is an architectural style for building web services 
+   that interact via an HTTP protocol. Although REST API was formulated in 2000 by computer scientist Roy Fielding,
+   it remains the gold standard for public APIs.
+   
+____________________________________________________________________________________________________________________________________
+
+#Q.8 Diffrence between Cookie and session in PHP?
+*ANS* -> The main difference between a session and a cookie is that session data is stored on the server, 
+         whereas cookies store data in the visitor's browser. Sessions are more secure than cookies as it is stored in server. 
+         Cookie can be turned off from browser.
+
+____________________________________________________________________________________________________________________________________
+
+#Q.9 How to print multidimantional array in Php without using loops? 
+*ANS* -> 
+        
+  Using array_walk_recursive function
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+function myfunction($value,$key)
+{
+echo "The key $key has the value $value<br>";
+}
+$a1=array("a"=>"red","b"=>"green");
+$a2=array($a1,"1"=>"blue","2"=>"yellow");
+array_walk_recursive($a2,"myfunction");
+?>
+
+</body>
+</html>
+
+______________________________________________________________________________________________________________________________________
+
+#Q.10 How Many design pattern use by laravel ?
+*ANS* -> 
+        1 Builder pattern
+        2 Factory pattern
+        3 Strategy pattern
+        4 Provider pattern
+        5 Repository pattern
+        6 Facade pattern
+        
+        more about checkout this link -> https://codesource.io/brief-overview-of-design-pattern-used-in-laravel/
+
+______________________________________________________________________________________________________________________________________
+
+#Q.11 What is Middleware?
+*ANS* -> Middleware provide a convenient mechanism for inspecting and filtering HTTP requests entering your application.
+         For example, Laravel includes a middleware that verifies the user of your application is authenticated. If the user
+         is not authenticated, the middleware will redirect the user to your application's login screen. However, if the user is
+         authenticated, the middleware will allow the request to proceed further into the application.
+
+
+______________________________________________________________________________________________________________________________________
+
+#Q.12 What is reverse routing in Laravel?
+*ANS* -> Laravel reverse routing is generating URL's based on route declarations. Reverse routing makes your application 
+         so much more flexible. It defines a relationship between links and Laravel routes. When a link is created by using 
+         names of existing routes, appropriate Uri's are created automatically by Laravel.
+         
+         Here is an example of reverse routing.
+         
+         // route declaration
+         Route::get(‘login’, ‘users@login’);
+
+         Using reverse routing we can create a link to it and pass in any parameters that we have defined. 
+         Optional parameters, if not supplied, are removed from the generated link.
+         
+         {{ HTML::link_to_action('users@login') }}
+         
+      
+ ______________________________________________________________________________________________________________________________________
+ 
+ #Q.13 What is Interface in PHP?
+ *ANS* -> A PHP interface defines a contract which a class must fulfill. If a PHP class is a blueprint for objects, 
+          an interface is a blueprint for classes. Any class implementing a given interface can be expected to have the same
+          behavior in terms of what can be called, how it can be called, and what will be returned.
+
+
+______________________________________________________________________________________________________________________________________
+
+#Q.14 What is Abstract Class in PHP?
+*ANS* -> PHP has abstract classes and methods. Classes defined as abstract cannot be instantiated, and any class that 
+         contains at least one abstract method must also be abstract. Methods defined as abstract simply declare the method's
+         signature; they cannot define the implementation.
+
+
+______________________________________________________________________________________________________________________________________
+
+#Q.15 Difference Between Abstract Class and Interface in PHP?
+*ANS* -> 
+
+1 interface -> 
+         Interface class supports multiple inheritance feature
+         This does not contain a data member.
+         The interface does not allow containers.
+         An interface class only contains incomplete members which refer to the signature of the member.
+         Since everything is assumed to be public, an interface class does not have access modifiers by default.
+         Any member of an interface cannot be static.
+         Interface not allow accessmodifierd like -> public , private.
+         also we can not make an object of interface class.
+
+2 abstract ->
+         Abstract class does not support multiple inheritances.
+         Abstract class does contain a data member.
+         The abstract class supports containers.
+         Abstract class contains both incomplete(i.e. abstract) and complete members.
+         An abstract class can contain access modifiers within subs, functions, and properties.
+         Only a complete member of the abstract class can be static.
+         we can not make an object of abstract class.
+         abstract class support access modifier like -> public, protechted, private
+
+______________________________________________________________________________________________________________________________________
+
+#Q.16 What is invokeble controller in laravel?
+*ANS* -> Laravel provide a single action controller called invokable controller which contains a invoke method to perform a 
+         single task. So for doing only single task we can use this invokable controller.
+         
+         to make invokable controller run
+         php artisan make:controller UserController --invokable
+
+______________________________________________________________________________________________________________________________________
+
+#Q.17 What is Api?
+*ANS* -> API is the acronym for Application Programming Interface, which is a software intermediary that allows
+         two applications to talk to each other. Each time you use an app like Facebook, send an instant message,
+         or check the weather on your phone, you’re using an API.
+
+______________________________________________________________________________________________________________________________________
+
+#Q.18 Diffrence between API and KPI?
+*ANS* ->
+         1 API ->
+                  Application Programming Interfaces (APIs) play in daily business operations,
+                  API Key Performance Indicators (KPIs) are now deeply interwoven with today’s business strategies.
+                  The more closely you measure your API.
+         
+         2 KPI -> 
+                  1 KPIs for Measuring API Performance
+                  2 Measured pass rate
+                  3 KPIs for Measuring API Impact on Development and the Business
+                  
+                  
+                  
+______________________________________________________________________________________________________________________________________
+
+#Q.19 Diffrence between SOAP API and REST API ?
+*ANS* -> 
+         1 REST API -> 
+                      Rest API is implemented as it has no official standard at all because it is an architectural style.	
+                      REST APIs uses multiple standards like HTTP, JSON, URL, and XML for data communication and transfer.	
+                      As REST API deploys and uses multiple standards as stated above, so it takes fewer resources and
+                      bandwidth as compared to SOAP API.	
+                      REST has SSL and HTTPS for security.	
+         
+         2 SOAP API -> 
+                      On other hand SOAP API has an official standard because it is a protocol.
+                      SOAP APIs is largely based and uses only HTTP and XML.
+                      On other hand Soap API requires more resource and bandwidth as it needs to convert the data in XML which
+                      increases its payload and results in the large sized file.
+                      On other hand SOAP has SSL( Secure Socket Layer) and WS-security due to which in the cases like 
+                      Bank Account Password, Card Number, etc. SOAP is preferred over REST.
+
+
+______________________________________________________________________________________________________________________________________
+
+#Q.20 What is Indexses in MySql?
+*ANS* ->  indexes are used to find rows with specific column values quickly. Without an index, MySQL must begin
+          with the first row and then read through the entire table to find the relevant rows. The larger the table,
+          the more this costs.
+          If the table has an index for the columns in question, MySQL can quickly determine the position to seek 
+          to in the middle of the data file without having to look at all the data. This is much faster than reading every
+          row sequentially.
+          
+          
+______________________________________________________________________________________________________________________________________
+          
+          
+#Q.21 What is use of APP_KEY in Laravel?
+*ANS* -> The APP_KEY is used to keep your user sessions and other encrypted data secure! If the application key is not set,
+         your user sessions and other encrypted data will not be secure.
+         
+______________________________________________________________________________________________________________________________________
+
+#Q.22 What is disadvantage of using index in mysql ?
+*ANS* -> One of these disadvantages is, that indexes require space in memory and on disk. An other disadvantage of indexes
+         is, that they slow down DML statements like INSERT and DELETE.
+         
+______________________________________________________________________________________________________________________________________
+
+#Q.23 Why we use view in mysql?
+*ANS* -> Because MySQL views look and function like regular tables, they are sometimes called virtual tables.
+         You can use views to hide table columns from users by granting them access to the view and not to the table itself. 
+         This helps enhance database security and integrity.
+
+     
+______________________________________________________________________________________________________________________________________
+
+#Q.24 What is disadvantage of using view in mysql?
+*ANS* ->  the main disadvantage to using views rather than real tables is performance degradation. Because views 
+          only create the appearance of a table, not a real table, the query processor must translate queries 
+          against the view into queries against the underlying source tables.
+          alos when table is not there view will not work.
+          dml is not possible if that is more than one table.
+          it is also database object so it will occupy the space.
+          
+______________________________________________________________________________________________________________________________________
+
+#Q.25 What is store procedure in MySql?
+*ANS* -> The stored procedure is SQL statements wrapped within the CREATE PROCEDURE statement. The stored procedure may contain 
+         a conditional statement like IF or CASE or the Loops. ... This way, a stored procedure makes the database more consistent.
+         If any change is required, you need to make a change in the stored procedure only.
+         
+______________________________________________________________________________________________________________________________________
+
+#Q.26 What is trigger in Mysql?
+*ANS* -> A trigger in MySQL is a set of SQL statements that reside in a system catalog. It is a special type of stored 
+         procedure that is invoked automatically in response to an event. Each trigger is associated with a table, which is 
+         activated on any DML statement such as INSERT, UPDATE, or DELETE.
+         
+______________________________________________________________________________________________________________________________________
+
+#Q.27 What is Event in Mysql?
+*ANS* -> MySQL Events are tasks that run according to a schedule. Therefore, we sometimes refer to them as scheduled events.
+         When you create an event, you are creating a named database object containing one or more SQL 
+         statements to be executed at one or more regular intervals, beginning and ending at a specific date and time.
+______________________________________________________________________________________________________________________________________
+
+#Q.28 How can triger call in Mysql?
+*ANS* -> 
+         First, specify the name of the trigger that you want to create after the CREATE TRIGGER keywords. Note that the trigger
+         name must be unique within a database.
+         Next, specify the trigger action time which can be either BEFORE or AFTER which indicates that the trigger is 
+         invoked before or after each row is modified.
+         Then, specify the operation that activates the trigger, which can be INSERT, UPDATE, or DELETE.
+         After that, specify the name of the table to which the trigger belongs after the ON keyword.
+         Finally, specify the statement to execute when the trigger activates. If you want to execute multiple statements, 
+         you use the BEGIN END compound statement.
+         
+______________________________________________________________________________________________________________________________________
+
+#Q.29 How Many  Storage Engine in Mysql?
+*ANS* -> There are two types of storage engines in MySQL: transactional and non-transactional. For MySQL 5.5 and later,
+         the default storage engine is InnoDB. The default storage engine for
+         MySQL prior to version 5.5 was MyISAM.
+
+
+______________________________________________________________________________________________________________________________________
+
+Q.30 How Many Commands In SQl?
+*ANS* -> 
+         four command 
+         1 DDL - Data Defination Language
+         2 DML - Data manuplation language
+         3 DCL - Data controle Language
+         4 DTL - Data transaction language
+         
+         many peapol commit to five command in sql 
+         5 DQL - Data query language
+
+______________________________________________________________________________________________________________________________________
+
+#Q.31 What is eloquent in laravel?
+*ANS* -> Laravel includes Eloquent, an object-relational mapper (ORM) that makes it enjoyable to interact with your database.
+         In addition to retrieving records from the database table, Eloquent models allow you to insert, update, and delete records
+         from the table as well. 
+
+______________________________________________________________________________________________________________________________________
+
+#Q.32 Difrance between service provider and service container in laravel?
+*ANS* -> Service container is where your services are registered.
+         Service providers provide services by adding them to the container.
+
+
+______________________________________________________________________________________________________________________________________
+
+#Q.33 What is polymorphism in PHP?
+*ANS* -> Polymorphism is one of the PHP Object Oriented Programming (OOP) features. In general, polymorphism means the ability
+         to have many forms. If we say it in other words, "Polymorphism describes a pattern in Object Oriented Programming in
+         which a class has varying functionality while sharing a common interfaces.
+         
+         Example -> 
+         One persone can greeting in multiple languages like english, hindhi, franch
+         
+        
+______________________________________________________________________________________________________________________________________
+
+#Q.34 What is function overloading in PHP?
+*ANS* -> Function overloading is a feature that permits making creating several methods with a similar name that works 
+         differently from one another in the type of the input parameters it accepts as arguments.
+
+______________________________________________________________________________________________________________________________________
+
+
+#Q.35 What is Transaction in Mysql?
+*ANS* -> A transaction in MySQL is a sequential group of statements, queries, or operations such as select, insert,
+         update or delete to perform as a one single work unit that can be committed or rolled back.
+         
+______________________________________________________________________________________________________________________________________
+
+#Q.36 What are the types of errors in PHP?
+*ANS* -> 1 Parse Error (Syntax Error)
+         2 Fatal Error
+         3 Warning Error.
+         4 Notice Error.
+
+______________________________________________________________________________________________________________________________________
+
+#Q.37 Diffrence between p_connect and  connect in PHP?
+*ANS* -> connect uses fewer resources (idle instances of the web server don't need to keep a database connection open), 
+         but pconnect is slightly faster (don't have to open a new connection, it's already there).
+
+______________________________________________________________________________________________________________________________________
+
+#Q.38 Diffrence between Mysql ans phpmyadmin?
+*ANS* ->  MySQL is a RDBMS (Relational DataBase Management System), PhpMyAdmin is a web application wich let you manage 
+         (with a visual interface) MySQL Databases. They are not really comparable items. MySQL is a Database and PHPmyAdmin is an 
+          Administration UI (for mySQL).
+
+
+______________________________________________________________________________________________________________________________________
+
+#Q.39 Difference between hasmany and belongstomany relationship in Laravel?
+*ANS* -> hasMany is used in a One To Many relationship while belongsToMany refers to a Many To Many relationship. 
+         They are both distinct relationship types and each require a different database structure - thus they take different
+         parameters.
+         
+         
+______________________________________________________________________________________________________________________________________
+
+#Q.40 What is Event and Listenr In laravel ?
+*ANS* -> Laravel's events provide a simple observer pattern implementation, allowing you to subscribe and listen for various events 
+         that occur within your application. Event classes are typically stored in the app/Events directory, while their listeners 
+         are stored in app/Listeners.
+         
+
+______________________________________________________________________________________________________________________________________
+
+#Q.41 What is Job and qaue In Laravel ?
+*ANS* -> Laravel gives us a built-in queue system that helps us to run tasks in the background and configure how the system should
+         react in different situations. It allows you to delay a time-consuming task until a later time. By postponing the 
+         time-consuming task, you can improve the performance of the Laravel applications.
+         
+______________________________________________________________________________________________________________________________________
+
+#Q.42 What is pivot table in Laravel?
+*ANS* ->  pivot table is an example of intermediate table with relationships between two other “main” tables.
+
+______________________________________________________________________________________________________________________________________
+
+#Q.43 What is repository pattern?
+*ANS* -> The Repository pattern. Repositories are classes or components that encapsulate the logic required to access data sources. 
+         They centralize common data access functionality, providing better maintainability and decoupling the infrastructure or 
+         technology used to access databases from the domain model layer.
+
+______________________________________________________________________________________________________________________________________
+
+#Q.44 What is Encapsulation in PHP?
+*ANS* -> So the OOPs concept of Encapsulation in PHP means, enclosing the internal details of the object to protect from external
+         sources. It describes, combining the class, data variables and member functions that work on data together within a single 
+         unit to form an object.
+         
+         so Wrapping up data member and method together into a single unit is called Encapsulation.
+        
+______________________________________________________________________________________________________________________________________
+
+#Q.45 What is a CSRF token?
+*ANS* -> CSRF is an abbreviation for Cross-Site Request Forgery. A CSRF token is a unique value that is generated by the server-side 
+         of the application and sent to the client.
+
+         CSRF token helps to protect web applications from attacks which force a user to perform an unwanted action (commonly known as
+         CSRF attacks).
+
+         The following code segment shows how a CSRF token can be used when creating a form in Laravel.
+
+         <form action="/user" method="POST"> 
+         @csrf 
+         
+______________________________________________________________________________________________________________________________________
+
+#Q.46 What benifit are using design pattern in PHP?
+*ANS* -> PHP Design patters help in solving repetitive problems faced during development
+         Using design patterns in PHP makes more efficient communication between designers 
+         Other developers looking at your code won’t have to struggle to understand as the code is well structured with design patterns
+         Following best practices helps build more robust software
+         It helps make development faster and easier
+
+______________________________________________________________________________________________________________________________________
+
+#Q.47 What is Depandancy Injection ?
+*ANS* -> Dependency Injection is that software design pattern that would allow you to remove hard-coded dependencies
+         and also make it possible to change them either on runtime or at compile time. Adding dependency injection is easy 
+         and it does not meddle with your existing code.
+
+______________________________________________________________________________________________________________________________________
+
+#Q.48 How Many Design Pattern in PHP?
+*ANS* -> 1 Factory Pattern
+         2 Adapter Pattern
+         3 Singleton Pattern
+         4 Observer Pattern 
+         5 Decorator Pattern 
+
+______________________________________________________________________________________________________________________________________
+
+#Q.49 Diffrence bitween $_REQUEST and $_POST method in PHP?
+*ANS* -> $_POST : It can catch the data which is sent using POST method.
+         $_REQUEST : It can catch the data which is sent using both POST & GET methods.
+
+______________________________________________________________________________________________________________________________________
+
+#Q.50 Explain Laravel Request Lifecycle?
+*ANS* ->  The entry point for all requests to a Laravel application is the public/index.php file.
+          All requests are directed to this file by your web server (Apache / Nginx)
+          he index.php file loads the Composer generated autoloader definition, and then retrieves an instance of the Laravel
+          application from bootstrap/app.php.
+          The first action taken by Laravel itself is to create an instance of the application via service container.
+          Next, the incoming request is sent to either the HTTP kernel or the console kernel, depending on the type of request
+          that is entering the application.
+          This service provider loads the route files contained within your application's routes directory.
+          The router will dispatch the request to a route or controller, as well as run any route specific middleware.
+          Once the route or controller method returns a response, the response will travel back outward through the route's 
+          middleware, giving the application a chance to modify or examine the outgoing response.
+          
+______________________________________________________________________________________________________________________________________
